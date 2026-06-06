@@ -91,6 +91,15 @@ export const LandingPage = () => {
     ];
 
 
+  const images = [
+  "https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=800",
+  "https://images.unsplash.com/photo-1517832606299-7ae9b720a186?w=800",
+  "https://images.unsplash.com/photo-1503951458645-643d53bfd90f?w=800",
+  "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800",
+  "https://images.unsplash.com/photo-1496345875659-11f7dd282d1d?w=800",
+  "https://images.unsplash.com/photo-1521119989659-a83eee488004?w=800",
+];
+
     return (
         <div>
 
@@ -717,6 +726,73 @@ export const LandingPage = () => {
 
                 </div>
             </section>
+            <section className="bg-[#f5f5f5] mt-80 lg:mt-0 md:mt-0  py-16 lg:px-20 md:px-8 px-4">
+      {/* Top Section */}
+      <div className="grid lg:grid-cols-2 gap-10 items-center">
+        {/* Images */}
+        <div className="grid grid-cols-2 gap-4">
+          <div className="overflow-hidden rounded-2xl">
+            <img
+              src={images[0]}
+              alt="work"
+              className="w-full h-[320px] object-cover"
+            />
+          </div>
+
+          <div className="overflow-hidden rounded-2xl">
+            <img
+              src={images[1]}
+              alt="work"
+              className="w-full h-[320px] object-cover"
+            />
+          </div>
+        </div>
+
+        {/* Content */}
+        <div>
+          <h2
+            className="font-bold uppercase text-black
+            text-3xl md:text-4xl lg:text-5xl"
+            style={{ fontFamily: "Oswald, sans-serif" }}
+          >
+            Discover Our Works
+          </h2>
+
+          <div className="w-14 h-[3px] bg-[#d59a8d] mt-3 mb-6"></div>
+
+          <p className="text-gray-700 text-base md:text-lg leading-relaxed max-w-[500px]">
+            There are many variations of passages of lorem ipsum the injected
+            humour randomised word.
+          </p>
+
+          <button
+            className="mt-8 border border-[#d59a8d]
+            px-8 py-3 uppercase text-sm tracking-wide
+            hover:bg-[#d59a8d] hover:text-white
+            transition-all duration-300"
+            style={{ fontFamily: "Oswald, sans-serif" }}
+          >
+            All Work
+          </button>
+        </div>
+      </div>
+
+      {/* Bottom Gallery */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
+        {images.slice(2).map((img, index) => (
+          <div
+            key={index}
+            className="overflow-hidden rounded-2xl group"
+          >
+            <img
+              src={img}
+              alt={`gallery-${index}`}
+              className="w-full h-[240px] lg:h-[400px] object-cover transition duration-500 group-hover:scale-110"
+            />
+          </div>
+        ))}
+      </div>
+    </section>
         </div>
     );
 };
