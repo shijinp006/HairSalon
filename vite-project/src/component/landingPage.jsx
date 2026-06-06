@@ -2,6 +2,8 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import heroImage from "../assets/pexels-th2city-2068672.webp";
 import logo from "../assets/logo.webp";
+import AboutImage1 from "../assets/AboutImage1.webp";
+import AboutImage2 from "../assets/AboutImage2.webp";
 
 export const LandingPage = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -241,7 +243,7 @@ export const LandingPage = () => {
               whileTap={{
                 scale: 0.95,
               }}
-              className="mt-6 md:mt-8 bg-[#E88B79] hover:bg-[#d87867] text-white px-6 sm:px-8 py-3 md:py-4 uppercase font-semibold tracking-wider flex items-center gap-3 rounded-sm transition duration-300"
+              className="mt-6 md:mt-8 bg-[#E88B79] hover:bg-[#d87867] text-white px-6 sm:px-8 py-3 md:py-4 uppercase cursor-pointer font-semibold tracking-wider flex items-center gap-3 rounded-sm transition duration-300"
             >
               All Services
               <span className="text-xl">→</span>
@@ -307,7 +309,7 @@ export const LandingPage = () => {
               }}
               className="mt-10 border border-[#E88B79]
               text-black px-8 py-4 flex items-center gap-4
-              uppercase tracking-wider font-medium"
+              uppercase tracking-wider font-medium cursor-pointer"
               style={{
                 fontFamily: "Oswald, sans-serif",
               }}
@@ -330,7 +332,7 @@ export const LandingPage = () => {
               transition={{ duration: 0.3 }}
             >
               <img
-                // src={img1}
+                src={AboutImage1}
                 alt="Hair Style"
                 className="w-full h-[350px] md:h-[500px] lg:h-[600px]
                 object-cover rounded-2xl"
@@ -340,10 +342,10 @@ export const LandingPage = () => {
             <motion.div
               whileHover={{ y: -10 }}
               transition={{ duration: 0.3 }}
-              className="mt-8"
+             
             >
               <img
-                // src={img2}
+                src={AboutImage2}
                 alt="Hair Style"
                 className="w-full h-[350px] md:h-[500px] lg:h-[600px]
                 object-cover rounded-2xl"
