@@ -769,7 +769,7 @@ export const LandingPage = () => {
             className="mt-8 border border-[#d59a8d]
             px-8 py-3 uppercase text-sm tracking-wide
             hover:bg-[#d59a8d] hover:text-white
-            transition-all duration-300"
+            transition-all duration-300 cursor-pointer"
             style={{ fontFamily: "Oswald, sans-serif" }}
           >
             All Work
@@ -787,7 +787,7 @@ export const LandingPage = () => {
             <img
               src={img}
               alt={`gallery-${index}`}
-              className="w-full h-[240px] lg:h-[400px] object-cover transition duration-500 group-hover:scale-110"
+              className="w-full h-[240px] lg:h-[400px] object-cover cursor-pointer transition duration-500 group-hover:scale-110"
             />
           </div>
         ))}
