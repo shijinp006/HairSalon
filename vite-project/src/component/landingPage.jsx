@@ -650,6 +650,73 @@ export const LandingPage = () => {
                     </div>
                 </div>
             </section>
+
+            <section className="w-full bg-black h-screen text-white">
+                <div className="grid lg:grid-cols-2 min-h-[500px]">
+
+                    {/* LEFT CONTENT */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -80 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.7 }}
+                        viewport={{ once: true }}
+                        className="flex items-center justify-center px-6 md:px-12 lg:px-20 py-12"
+                    >
+                        <div >
+
+                            {/* TITLE */}
+                            <h2 className="font-oswald text-3xl md:text-4xl lg:text-5xl uppercase tracking-wider">
+                                OFFER PROMOTION
+                            </h2>
+
+                            <div className="w-12 h-[3px] bg-[#d77b6c] mt-3 mb-6"></div>
+
+                            {/* SUB TITLE */}
+                            <h3 className="font-oswald text-lg md:text-xl text-[#d77b6c] uppercase mb-4">
+                                Our Special Hand Made Creme
+                            </h3>
+
+                            {/* DESCRIPTION */}
+                            <p className="text-gray-400 text-sm md:text-base leading-relaxed mb-8">
+                                There are many variations of passages of Lorem Ipsum majority
+                                have suffered alteration in that some form believable.
+                            </p>
+
+                            {/* BUTTON AREA */}
+                            <div className="flex items-center gap-6">
+                                <span className="text-[#d77b6c] font-oswald text-lg">
+                                    $60.00
+                                </span>
+
+                                <button className="border border-white px-6 py-2 flex items-center gap-3 uppercase font-oswald cursor-pointer text-sm hover:bg-white hover:text-black transition">
+                                    More
+                                    <span className="text-lg">→</span>
+                                </button>
+                            </div>
+
+                        </div>
+                    </motion.div>
+
+                    {/* RIGHT IMAGE */}
+                    <motion.div
+                        initial={{ opacity: 0, x: 80 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.7 }}
+                        viewport={{ once: true }}
+                        className="relative"
+                    >
+                        <img
+                            src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=1200"
+                            alt="barber"
+                            className="w-full h-screen object-cover"
+                        />
+
+                        {/* Optional overlay like design */}
+                        <div className="absolute inset-0 bg-black/10"></div>
+                    </motion.div>
+
+                </div>
+            </section>
         </div>
     );
 };
