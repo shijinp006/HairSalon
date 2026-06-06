@@ -4,203 +4,275 @@ import heroImage from "../assets/pexels-th2city-2068672.webp";
 import logo from "../assets/logo.webp";
 import AboutImage1 from "../assets/AboutImage1.webp";
 import AboutImage2 from "../assets/AboutImage2.webp";
+import { Scissors, Sparkles, Brush } from "lucide-react";
+import { Clock } from "lucide-react";
 
 export const LandingPage = () => {
-  const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
-  const menuItems = [
-    "HOME",
-    "ABOUT US",
-    "SERVICES",
-    "PORTFOLIO",
-    "TEAM",
-    "PRICING",
-    "BLOGS",
-    "CONTACT",
-  ];
+    const menuItems = [
+        "HOME",
+        "ABOUT US",
+        "SERVICES",
+        "PORTFOLIO",
+        "TEAM",
+        "PRICING",
+        "BLOGS",
+        "CONTACT",
+    ];
 
-  return (
-    <div>
+    const services = [
+        {
+            icon: <Scissors size={40} />,
+            title: "Haircut Style",
+            desc: "Professional haircut styles tailored to your personality and look.",
+        },
+        {
+            icon: <Brush size={40} />,
+            title: "Shaving Style",
+            desc: "Premium shaving service with modern techniques and precision.",
+        },
+        {
+            icon: <Sparkles size={40} />,
+            title: "Hair Coloring",
+            desc: "Transform your appearance with trendy and classic hair colors.",
+        },
+    ];
 
-   
-    <section
-      className="relative min-h-screen bg-cover bg-center w-full"
-      style={{
-        backgroundImage: `url(${heroImage})`,
-      }}
-    >
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/55"></div>
+    const prices = [
+        {
+            service: "Haircuts",
+            desc: "Clean & Simple 30-40 Minutes",
+            price: "125$",
+        },
+        {
+            service: "Skin Fade",
+            desc: "Haircut Blends To Skin",
+            price: "145$",
+        },
+        {
+            service: "Buzz Cut",
+            desc: "Clippers Only Cut All Over",
+            price: "75$",
+        },
+        {
+            service: "Chap Haircut",
+            desc: "Junior Under 14",
+            price: "75$",
+        },
+        {
+            service: "Colouring",
+            desc: "Premium Hair Color Service",
+            price: "225$",
+        },
+    ];
 
-      {/* Navbar */}
-      <motion.header
-        initial={{ opacity: 0, y: -40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="relative z-20 border-b border-white/20"
-      >
-        <div className="px-4 sm:px-6 md:px-8 lg:px-20 mx-auto">
-          <div className="flex items-center justify-between h-20 md:h-24">
+    const schedule = [
+        {
+            time: "12:00 AM - 2:00 AM",
+            slots: "9 Spaces Available",
+            available: false,
+        },
+        {
+            time: "12:00 AM - 2:00 AM",
+            slots: "9 Spaces Available",
+            available: true,
+        },
+        {
+            time: "12:00 AM - 2:00 AM",
+            slots: "9 Spaces Available",
+            available: false,
+        },
+        {
+            time: "12:00 AM - 2:00 AM",
+            slots: "9 Spaces Available",
+            available: true,
+        },
+    ];
 
-            {/* Logo */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.3 }}
-              className="flex items-center gap-2 sm:gap-3"
+
+    return (
+        <div>
+
+
+            <section
+                className="relative min-h-screen bg-cover bg-center w-full"
+                style={{
+                    backgroundImage: `url(${heroImage})`,
+                }}
             >
-              <img
-                src={logo}
-                alt="logo"
-                className="w-15 h-15 md:w-12 md:h-12 lg:w-20 lg:h-20 object-contain"
-              />
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-black/55"></div>
 
-              <div>
-                <h2 className="text-[#E88B79] text-sm sm:text-base md:text-lg font-semibold uppercase tracking-wider">
-                  The Style Loft
-                </h2>
-
-                <p
-                  className="text-white text-[10px] sm:text-xs"
-                  style={{ fontFamily: "cursive" }}
+                {/* Navbar */}
+                <motion.header
+                    initial={{ opacity: 0, y: -40 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    className="relative z-20 border-b border-white/20"
                 >
-                  Hair Salon
-                </p>
-              </div>
-            </motion.div>
+                    <div className="px-4 sm:px-6 md:px-8 lg:px-20 mx-auto">
+                        <div className="flex items-center justify-between h-20 md:h-24">
 
-            {/* Desktop Menu */}
-            <nav className="hidden lg:flex items-center gap-8">
-              {menuItems.map((item) => (
-                <motion.a
-                  whileHover={{
-                    scale: 1.1,
-                    color: "#E88B79",
-                  }}
-                  key={item}
-                  href="#"
-                  className="text-white text-sm font-semibold tracking-wider"
-                >
-                  {item}
-                </motion.a>
-              ))}
-            </nav>
+                            {/* Logo */}
+                            <motion.div
+                                initial={{ opacity: 0, x: -30 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: 0.3 }}
+                                className="flex items-center gap-2 sm:gap-3"
+                            >
+                                <img
+                                    src={logo}
+                                    alt="logo"
+                                    className="w-15 h-15 md:w-12 md:h-12 lg:w-20 lg:h-20 object-contain"
+                                />
 
-            {/* Desktop Icons */}
-            <div className="hidden lg:flex items-center gap-5 text-white">
-              <motion.div whileHover={{ scale: 1.2 }}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-5 h-5 cursor-pointer"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="1.8"
-                    d="M3 3h2l.4 2M7 13h10l4-8H5.4"
-                  />
-                </svg>
-              </motion.div>
+                                <div>
+                                    <h2 className="text-[#E88B79] text-sm sm:text-base md:text-lg font-semibold uppercase tracking-wider">
+                                        The Style Loft
+                                    </h2>
 
-              <motion.div whileHover={{ scale: 1.2 }}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-5 h-5 cursor-pointer"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <circle cx="11" cy="11" r="7" strokeWidth="1.8" />
-                  <path
-                    strokeLinecap="round"
-                    strokeWidth="1.8"
-                    d="M20 20l-3-3"
-                  />
-                </svg>
-              </motion.div>
-            </div>
+                                    <p
+                                        className="text-white text-[10px] sm:text-xs"
+                                        style={{ fontFamily: "cursive" }}
+                                    >
+                                        Hair Salon
+                                    </p>
+                                </div>
+                            </motion.div>
 
-            {/* Mobile Button */}
-            <button
-              className="lg:hidden text-white"
-              onClick={() => setIsOpen(!isOpen)}
-            >
-              {isOpen ? (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-7 h-7"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-7 h-7"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
-              )}
-            </button>
-          </div>
-        </div>
-      </motion.header>
+                            {/* Desktop Menu */}
+                            <nav className="hidden lg:flex items-center gap-8">
+                                {menuItems.map((item) => (
+                                    <motion.a
+                                        whileHover={{
+                                            scale: 1.1,
+                                            color: "#E88B79",
+                                        }}
+                                        key={item}
+                                        href="#"
+                                        className="text-white text-sm font-semibold tracking-wider"
+                                    >
+                                        {item}
+                                    </motion.a>
+                                ))}
+                            </nav>
 
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.4 }}
-            className="lg:hidden relative z-20 bg-black/95 border-b border-white/20 overflow-hidden"
-          >
-            <nav className="flex flex-col">
-              {menuItems.map((item) => (
-                <motion.a
-                  whileHover={{ x: 10 }}
-                  key={item}
-                  href="#"
-                  className="text-white px-6 py-4 text-sm font-semibold tracking-wider hover:bg-white/10"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item}
-                </motion.a>
-              ))}
-            </nav>
-          </motion.div>
-        )}
-      </AnimatePresence>
+                            {/* Desktop Icons */}
+                            <div className="hidden lg:flex items-center gap-5 text-white">
+                                <motion.div whileHover={{ scale: 1.2 }}>
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="w-5 h-5 cursor-pointer"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth="1.8"
+                                            d="M3 3h2l.4 2M7 13h10l4-8H5.4"
+                                        />
+                                    </svg>
+                                </motion.div>
 
-      {/* Hero Content */}
-      <div className="relative z-10 flex items-center min-h-[calc(100vh-80px)] md:min-h-[calc(100vh-96px)] py-10 md:py-0">
-        <div className="px-4 sm:px-6 md:px-8 lg:px-20 mx-auto w-full">
-          <div className="max-w-2xl">
+                                <motion.div whileHover={{ scale: 1.2 }}>
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="w-5 h-5 cursor-pointer"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <circle cx="11" cy="11" r="7" strokeWidth="1.8" />
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeWidth="1.8"
+                                            d="M20 20l-3-3"
+                                        />
+                                    </svg>
+                                </motion.div>
+                            </div>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 80 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
-              className="
+                            {/* Mobile Button */}
+                            <button
+                                className="lg:hidden text-white"
+                                onClick={() => setIsOpen(!isOpen)}
+                            >
+                                {isOpen ? (
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="w-7 h-7"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth="2"
+                                            d="M6 18L18 6M6 6l12 12"
+                                        />
+                                    </svg>
+                                ) : (
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="w-7 h-7"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth="2"
+                                            d="M4 6h16M4 12h16M4 18h16"
+                                        />
+                                    </svg>
+                                )}
+                            </button>
+                        </div>
+                    </div>
+                </motion.header>
+
+                {/* Mobile Menu */}
+                <AnimatePresence>
+                    {isOpen && (
+                        <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: "auto" }}
+                            exit={{ opacity: 0, height: 0 }}
+                            transition={{ duration: 0.4 }}
+                            className="lg:hidden relative z-20 bg-black/95 border-b border-white/20 overflow-hidden"
+                        >
+                            <nav className="flex flex-col">
+                                {menuItems.map((item) => (
+                                    <motion.a
+                                        whileHover={{ x: 10 }}
+                                        key={item}
+                                        href="#"
+                                        className="text-white px-6 py-4 text-sm font-semibold tracking-wider hover:bg-white/10"
+                                        onClick={() => setIsOpen(false)}
+                                    >
+                                        {item}
+                                    </motion.a>
+                                ))}
+                            </nav>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+
+                {/* Hero Content */}
+                <div className="relative z-10 flex items-center min-h-[calc(100vh-80px)] md:min-h-[calc(100vh-96px)] py-10 md:py-0">
+                    <div className="px-4 sm:px-6 md:px-8 lg:px-20 mx-auto w-full">
+                        <div className="max-w-2xl">
+
+                            <motion.h1
+                                initial={{ opacity: 0, y: 80 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 1 }}
+                                className="
                 text-white
                 uppercase
                 font-extrabold
@@ -211,151 +283,373 @@ export const LandingPage = () => {
                 md:text-6xl
                 lg:text-[80px]
               "
-              style={{
-                fontFamily: "Oswald, sans-serif",
-              }}
-            >
-              Collection
-              <br />
-              Hair & Beard
-            </motion.h1>
+                                style={{
+                                    fontFamily: "Oswald, sans-serif",
+                                }}
+                            >
+                                Collection
+                                <br />
+                                Hair & Beard
+                            </motion.h1>
 
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.6, duration: 1 }}
-              className="mt-4 md:mt-6 text-white/90 text-sm md:text-base leading-relaxed max-w-md md:max-w-lg"
-            >
-              Discover our exclusive Hair & Beard Collection,
-              meticulously crafted to elevate your grooming
-              experience. From premium haircuts and styling to
-              expert beard trims and treatments, our skilled
-              professionals ensure you look and feel your best.
-            </motion.p>
+                            <motion.p
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ delay: 0.6, duration: 1 }}
+                                className="mt-4 md:mt-6 text-white/90 text-sm md:text-base leading-relaxed max-w-md md:max-w-lg"
+                            >
+                                Discover our exclusive Hair & Beard Collection,
+                                meticulously crafted to elevate your grooming
+                                experience. From premium haircuts and styling to
+                                expert beard trims and treatments, our skilled
+                                professionals ensure you look and feel your best.
+                            </motion.p>
 
-            <motion.button
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1 }}
-              whileHover={{
-                scale: 1.05,
-              }}
-              whileTap={{
-                scale: 0.95,
-              }}
-              className="mt-6 md:mt-8 bg-[#E88B79] hover:bg-[#d87867] text-white px-6 sm:px-8 py-3 md:py-4 uppercase cursor-pointer font-semibold tracking-wider flex items-center gap-3 rounded-sm transition duration-300"
-            >
-              All Services
-              <span className="text-xl">→</span>
-            </motion.button>
+                            <motion.button
+                                initial={{ opacity: 0, y: 30 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 1 }}
+                                whileHover={{
+                                    scale: 1.05,
+                                }}
+                                whileTap={{
+                                    scale: 0.95,
+                                }}
+                                className="mt-6 md:mt-8 bg-[#E88B79] hover:bg-[#d87867] text-white px-6 sm:px-8 py-3 md:py-4 uppercase cursor-pointer font-semibold tracking-wider flex items-center gap-3 rounded-sm transition duration-300"
+                            >
+                                All Services
+                                <span className="text-xl">→</span>
+                            </motion.button>
 
-          </div>
-        </div>
-      </div>
-    </section>
-        <section className="py-16 md:py-20 bg-white overflow-hidden">
-      <div className="px-4 md:px-8 lg:px-20 mx-auto">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section className="py-16 md:py-20 bg-white overflow-hidden">
+                <div className="px-4 md:px-8 lg:px-20 mx-auto">
+                    <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
-          {/* Left Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -80 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            {/* Title */}
-            <div>
-              <h2
-                className="text-black uppercase font-bold
+                        {/* Left Content */}
+                        <motion.div
+                            initial={{ opacity: 0, x: -80 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8 }}
+                        >
+                            {/* Title */}
+                            <div>
+                                <h2
+                                    className="text-black uppercase font-bold
                 text-3xl md:text-4xl lg:text-5xl"
-                style={{
-                  fontFamily: "Oswald, sans-serif",
-                }}
-              >
-                About Us
-              </h2>
+                                    style={{
+                                        fontFamily: "Oswald, sans-serif",
+                                    }}
+                                >
+                                    About Us
+                                </h2>
 
-              <div className="w-10 h-[3px] bg-[#E88B79] mt-2"></div>
-            </div>
+                                <div className="w-10 h-[3px] bg-[#E88B79] mt-2"></div>
+                            </div>
 
-            {/* Short Description */}
-            <p className="mt-8 text-gray-800 text-base md:text-lg leading-relaxed max-w-xl">
-              Discover our exclusive hair & beard collection,
-              meticulously crafted to elevate your grooming
-              experience. From premium haircuts and styling to
-              expert beard trims and treatments, our skilled
-              professionals ensure you look and feel your best.
-            </p>
+                            {/* Short Description */}
+                            <p className="mt-8 text-gray-800 text-base md:text-lg leading-relaxed max-w-xl">
+                                Discover our exclusive hair & beard collection,
+                                meticulously crafted to elevate your grooming
+                                experience. From premium haircuts and styling to
+                                expert beard trims and treatments, our skilled
+                                professionals ensure you look and feel your best.
+                            </p>
 
-            {/* Main Content */}
-            <p className="mt-10 text-gray-900 text-lg leading-relaxed uppercase max-w-xl">
-              Discover Our Exclusive Hair & Beard Collection,
-              Meticulously Crafted To Elevate Your Grooming
-              Experience. From Premium Haircuts And Styling To
-              Expert Beard Trims And Treatments, Our Skilled
-              Professionals Ensure You Look And Feel Your Best.
-              Embrace A Refined, Polished Appearance With Our
-              Comprehensive Services Tailored For Modern Gentlemen.
-            </p>
+                            {/* Main Content */}
+                            <p className="mt-10 text-gray-900 text-lg leading-relaxed uppercase max-w-xl">
+                                Discover Our Exclusive Hair & Beard Collection,
+                                Meticulously Crafted To Elevate Your Grooming
+                                Experience. From Premium Haircuts And Styling To
+                                Expert Beard Trims And Treatments, Our Skilled
+                                Professionals Ensure You Look And Feel Your Best.
+                                Embrace A Refined, Polished Appearance With Our
+                                Comprehensive Services Tailored For Modern Gentlemen.
+                            </p>
 
-            {/* Button */}
-            <motion.button
-              whileHover={{
-                scale: 1.05,
-              }}
-              whileTap={{
-                scale: 0.95,
-              }}
-              className="mt-10 border border-[#E88B79]
+                            {/* Button */}
+                            <motion.button
+                                whileHover={{
+                                    scale: 1.05,
+                                }}
+                                whileTap={{
+                                    scale: 0.95,
+                                }}
+                                className="mt-10 border border-[#E88B79]
               text-black px-8 py-4 flex items-center gap-4
               uppercase tracking-wider font-medium cursor-pointer"
-              style={{
-                fontFamily: "Oswald, sans-serif",
-              }}
-            >
-              Contact Us
-              <span className="text-xl">→</span>
-            </motion.button>
-          </motion.div>
+                                style={{
+                                    fontFamily: "Oswald, sans-serif",
+                                }}
+                            >
+                                Contact Us
+                                <span className="text-xl">→</span>
+                            </motion.button>
+                        </motion.div>
 
-          {/* Right Images */}
-          <motion.div
-            initial={{ opacity: 0, x: 80 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="grid grid-cols-2 gap-4 md:gap-6"
-          >
-            <motion.div
-              whileHover={{ y: -10 }}
-              transition={{ duration: 0.3 }}
-            >
-              <img
-                src={AboutImage1}
-                alt="Hair Style"
-                className="w-full h-[350px] md:h-[500px] lg:h-[600px]
+                        {/* Right Images */}
+                        <motion.div
+                            initial={{ opacity: 0, x: 80 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8 }}
+                            className="grid grid-cols-2 gap-4 md:gap-6"
+                        >
+                            <motion.div
+                                whileHover={{ y: -10 }}
+                                transition={{ duration: 0.3 }}
+                            >
+                                <img
+                                    src={AboutImage1}
+                                    alt="Hair Style"
+                                    className="w-full h-[350px] md:h-[500px] lg:h-[600px]
                 object-cover rounded-2xl"
-              />
-            </motion.div>
+                                />
+                            </motion.div>
 
-            <motion.div
-              whileHover={{ y: -10 }}
-              transition={{ duration: 0.3 }}
-             
-            >
-              <img
-                src={AboutImage2}
-                alt="Hair Style"
-                className="w-full h-[350px] md:h-[500px] lg:h-[600px]
+                            <motion.div
+                                whileHover={{ y: -10 }}
+                                transition={{ duration: 0.3 }}
+
+                            >
+                                <img
+                                    src={AboutImage2}
+                                    alt="Hair Style"
+                                    className="w-full h-[350px] md:h-[500px] lg:h-[600px]
                 object-cover rounded-2xl"
-              />
-            </motion.div>
-          </motion.div>
+                                />
+                            </motion.div>
+                        </motion.div>
 
+                    </div>
+                </div>
+            </section>
+            <section className="  py-5 lg:py-10 px-4 md:px-8 lg:px-20 bg-white overflow-hidden">
+                <div className=" mx-auto">
+                    {/* Heading */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                        viewport={{ once: true }}
+                        className="text-center mb-16"
+                    >
+                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-oswald font-semibold uppercase tracking-wider">
+                            <span className="relative inline-block">
+                                What
+                                <span className="absolute left-0 bottom-[-6px] w-20 h-1 bg-[#d77b6c]"></span>
+                            </span>{" "}
+                            We Do
+                        </h2>
+
+
+                    </motion.div>
+
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        {/* Left Image */}
+                        <motion.div
+                            initial={{ opacity: 0, x: -80 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8 }}
+                            viewport={{ once: true }}
+                            className="relative"
+                        >
+                            <img
+                                src="https://images.unsplash.com/photo-1517832606299-7ae9b720a186?w=900"
+                                alt="Barber"
+                                className="w-full lg:h-[550px] object-cover rounded-xl shadow-lg"
+                            />
+                        </motion.div>
+
+                        {/* Right Cards */}
+                        <div className="space-y-6">
+                            {services.map((service, index) => (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, x: 80 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    transition={{
+                                        duration: 0.6,
+                                        delay: index * 0.2,
+                                    }}
+                                    viewport={{ once: true }}
+                                    whileHover={{
+                                        y: -5,
+                                        scale: 1.02,
+                                    }}
+                                    className="flex bg-[#f8eeee] rounded-2xl overflow-hidden shadow-md"
+                                >
+                                    {/* Icon Box */}
+                                    <div className="bg-[#de8b7d] min-w-[120px] flex items-center justify-center text-black">
+                                        {service.icon}
+                                    </div>
+
+                                    {/* Content */}
+                                    <div className=" p-3 lg:p-6">
+                                        <h3 className="text-xs lg:text-2xl md:text-3xl font-oswald font-semibold uppercase tracking-wide mb-3">
+                                            {service.title}
+                                        </h3>
+
+                                        <p className="text-gray-600 leading-relaxed">
+                                            {service.desc}
+                                        </p>
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className="py-16 px-4 md:px-8 lg:px-20 bg-[#f5f5f5]">
+                <div className=" mx-auto">
+                    <div className="grid lg:grid-cols-2 gap-8 items-stretch">
+
+                        {/* PRICE SECTION */}
+                        <motion.div
+                            initial={{ opacity: 0, x: -80 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.7 }}
+                            viewport={{ once: true }}
+                        >
+                            <div className="mb-6">
+                                <h2 className="font-oswald text-3xl md:text-4xl lg:text-5xl uppercase font-semibold">
+                                    Our Fair Prices
+                                </h2>
+
+                                <div className="w-10 h-1 bg-[#d77b6c] mt-3"></div>
+                            </div>
+
+                            {/* PRICE CARD */}
+                            <div
+                                className="relative rounded-xl overflow-hidden min-h-[400px] lg:min-h-[450px]"
+                                style={{
+                                    backgroundImage:
+                                        "url('https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=1200')",
+                                    backgroundSize: "cover",
+                                    backgroundPosition: "center",
+                                }}
+                            >
+                                <div className="absolute inset-0 bg-black/65"></div>
+
+                                <div className="relative p-4 md:p-5 h-full">
+                                    {prices.map((item, index) => (
+                                        <motion.div
+                                            key={index}
+                                            initial={{ opacity: 0, y: 25 }}
+                                            whileInView={{ opacity: 1, y: 0 }}
+                                            transition={{
+                                                duration: 0.4,
+                                                delay: index * 0.1,
+                                            }}
+                                            viewport={{ once: true }}
+                                            className="py-4 border-b border-white/20"
+                                        >
+                                            <div className="flex justify-between items-center">
+                                                <h3 className="font-oswald uppercase text-white text-lg">
+                                                    {item.service}
+                                                </h3>
+
+                                                <span className="font-oswald text-white text-lg">
+                                                    {item.price}
+                                                </span>
+                                            </div>
+
+                                            <p className="text-white/80 mt-1 text-sm">
+                                                {item.desc}
+                                            </p>
+                                        </motion.div>
+                                    ))}
+                                </div>
+                            </div>
+                        </motion.div>
+
+                        {/* SCHEDULE SECTION */}
+                        <motion.div
+                            initial={{ opacity: 0, x: 80 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.7 }}
+                            viewport={{ once: true }}
+                        >
+                            <div className="mb-6">
+                                <h2 className="font-oswald text-3xl md:text-4xl lg:text-5xl uppercase font-semibold">
+                                    Our Schedule
+                                </h2>
+
+                                <div className="w-10 h-1 bg-[#d77b6c] mt-3"></div>
+                            </div>
+
+                            {/* SCHEDULE CARD */}
+                            <div
+                                className="relative rounded-xl overflow-hidden min-h-[400px] lg:min-h-[462px]"
+                                style={{
+                                    backgroundImage:
+                                        "url('https://images.unsplash.com/photo-1517832606299-7ae9b720a186?w=1200')",
+                                    backgroundSize: "cover",
+                                    backgroundPosition: "center",
+                                }}
+                            >
+                                <div className="absolute inset-0 bg-black/65"></div>
+
+                                <div className="relative p-4  md:p-5 h-full">
+                                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-white mb-5">
+                                        <h3 className="font-oswald uppercase text-lg">
+                                            Available Appointments
+                                        </h3>
+
+                                        <span className="font-oswald uppercase text-sm">
+                                            Calendar
+                                        </span>
+                                    </div>
+
+                                    {schedule.map((item, index) => (
+                                        <motion.div
+                                            key={index}
+                                            initial={{ opacity: 0, y: 25 }}
+                                            whileInView={{ opacity: 1, y: 0 }}
+                                            transition={{
+                                                duration: 0.4,
+                                                delay: index * 0.1,
+                                            }}
+                                            viewport={{ once: true }}
+                                            className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 py-4 border-t border-white/20"
+                                        >
+                                            <div>
+                                                <div className="flex items-center gap-2 text-white">
+                                                    <Clock size={16} />
+
+                                                    <span className="font-oswald uppercase text-xl">
+                                                        {item.time}
+                                                    </span>
+                                                </div>
+
+                                                <p className="text-white/80 mt-1 text-xm">
+                                                    {item.slots}
+                                                </p>
+                                            </div>
+
+                                            {item.available ? (
+                                                <button className="border border-white text-white px-5 py-2 rounded-md font-oswald uppercase text-xs hover:bg-white hover:text-black transition">
+                                                    Book Appointment
+                                                </button>
+                                            ) : (
+                                                <button className="bg-[#d77b6c] text-white px-5 py-2 rounded-md font-oswald uppercase text-xs">
+                                                    Unavailable
+                                                </button>
+                                            )}
+                                        </motion.div>
+                                    ))}
+                                </div>
+                            </div>
+                        </motion.div>
+
+                    </div>
+                </div>
+            </section>
         </div>
-      </div>
-    </section>
-     </div>
-  );
+    );
 };
