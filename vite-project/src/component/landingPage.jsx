@@ -1176,30 +1176,41 @@ export const LandingPage = () => {
                 {isVideoOpen && (
                     <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4">
                         <div className="relative w-full max-w-5xl">
-                            {/* Close Button */}
+
                             <button
                                 onClick={() => setIsVideoOpen(false)}
                                 className="
-                absolute
-                -top-14
-                right-0
-                text-white
-                text-5xl
-                cursor-pointer
-                hover:text-gray-300
-              "
+          absolute
+          -top-5
+          -right-5
+          z-50
+          w-12
+          h-12
+          bg-white
+          rounded-full
+          flex
+          items-center
+          justify-center
+          text-black
+          text-2xl
+          font-bold
+          shadow-lg
+          hover:scale-110
+          transition-all
+          duration-300
+          cursor-pointer
+        "
                             >
                                 ×
                             </button>
 
-                            {/* Demo Video */}
                             <iframe
                                 className="w-full aspect-video rounded-xl"
                                 src="https://www.youtube.com/embed/-FnrCZJw6TE?autoplay=1"
                                 title="Intro Video"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowFullScreen
-                            ></iframe>
+                            />
                         </div>
                     </div>
                 )}
