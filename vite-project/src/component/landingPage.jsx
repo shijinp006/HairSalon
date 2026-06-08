@@ -1181,7 +1181,7 @@ export const LandingPage = () => {
                                 onClick={() => setIsVideoOpen(false)}
                                 className="
           absolute
-          -top-5
+          -top-6
           -right-5
           z-50
           w-12
@@ -1192,7 +1192,7 @@ export const LandingPage = () => {
           items-center
           justify-center
           text-black
-          text-2xl
+          text-xl
           font-bold
           shadow-lg
           hover:scale-110
