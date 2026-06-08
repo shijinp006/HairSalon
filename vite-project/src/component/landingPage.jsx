@@ -33,6 +33,25 @@ export const LandingPage = () => {
         "CONTACT",
     ];
 
+    const sectionIds = {
+        "HOME": "home",
+        "ABOUT US": "about",
+        "SERVICES": "services",
+        "PORTFOLIO": "portfolio",
+        "TEAM": "team",
+        "PRICING": "pricing",
+        "BLOGS": "blogs",
+        "CONTACT": "contact",
+    };
+
+    const scrollToSection = (menuItem) => {
+        const id = sectionIds[menuItem];
+        const el = document.getElementById(id);
+        if (el) {
+            el.scrollIntoView({ behavior: "smooth" });
+        }
+    };
+
     const services = [
         {
             icon: <Scissors size={40} />,
@@ -199,6 +218,7 @@ export const LandingPage = () => {
 
 
             <section
+                id="home"
                 className="relative min-h-screen bg-cover bg-center w-full"
                 style={{
                     backgroundImage: `url(${heroImage})`,
@@ -247,17 +267,17 @@ export const LandingPage = () => {
                             {/* Desktop Menu */}
                             <nav className="hidden lg:flex items-center gap-8">
                                 {menuItems.map((item) => (
-                                    <motion.a
+                                    <motion.span
                                         whileHover={{
                                             scale: 1.1,
                                             color: "#E88B79",
                                         }}
                                         key={item}
-                                        href="#"
-                                        className="text-white text-sm font-semibold tracking-wider"
+                                        onClick={() => scrollToSection(item)}
+                                        className="text-white text-sm font-semibold tracking-wider cursor-pointer"
                                     >
                                         {item}
-                                    </motion.a>
+                                    </motion.span>
                                 ))}
                             </nav>
 
@@ -351,15 +371,14 @@ export const LandingPage = () => {
                         >
                             <nav className="flex flex-col">
                                 {menuItems.map((item) => (
-                                    <motion.a
+                                    <motion.span
                                         whileHover={{ x: 10 }}
                                         key={item}
-                                        href="#"
-                                        className="text-white px-6 py-4 text-sm font-semibold tracking-wider hover:bg-white/10"
-                                        onClick={() => setIsOpen(false)}
+                                        className="text-white px-6 py-4 text-sm font-semibold tracking-wider hover:bg-white/10 cursor-pointer"
+                                        onClick={() => { setIsOpen(false); scrollToSection(item); }}
                                     >
                                         {item}
-                                    </motion.a>
+                                    </motion.span>
                                 ))}
                             </nav>
                         </motion.div>
@@ -428,7 +447,7 @@ export const LandingPage = () => {
                     </div>
                 </div>
             </section>
-            <section className="py-16 md:py-20 bg-white overflow-hidden">
+            <section id="about" className="py-16 md:py-20 bg-white overflow-hidden">
                 <div className="px-4 md:px-8 lg:px-20 mx-auto">
                     <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
@@ -531,7 +550,7 @@ export const LandingPage = () => {
                     </div>
                 </div>
             </section>
-            <section className="  py-5 lg:py-10 px-4 md:px-8 lg:px-20 bg-white overflow-hidden">
+            <section id="services" className="  py-5 lg:py-10 px-4 md:px-8 lg:px-20 bg-white overflow-hidden">
                 <div className=" mx-auto">
                     {/* Heading */}
                     <motion.div
@@ -608,7 +627,7 @@ export const LandingPage = () => {
                 </div>
             </section>
 
-            <section className="py-16 px-4 md:px-8 lg:px-20 bg-[#f5f5f5]">
+            <section id="pricing" className="py-16 px-4 md:px-8 lg:px-20 bg-[#f5f5f5]">
                 <div className=" mx-auto">
                     <div className="grid lg:grid-cols-2 gap-8 items-stretch">
 
@@ -820,7 +839,7 @@ export const LandingPage = () => {
 
                 </div>
             </section>
-            <section className="bg-[#f5f5f5] mt-80 lg:mt-0 md:mt-80  py-16 lg:px-20 md:px-8 px-4">
+            <section id="portfolio" className="bg-[#f5f5f5] mt-80 lg:mt-0 md:mt-80  py-16 lg:px-20 md:px-8 px-4">
                 {/* Top Section */}
                 <div className="grid lg:grid-cols-2 gap-10 items-center">
                     {/* Images */}
@@ -888,7 +907,7 @@ export const LandingPage = () => {
                 </div>
             </section>
 
-            <section className="bg-[#f4f4f4] py-16 px-4 md:px-8 lg:px-20 overflow-hidden">
+            <section id="team" className="bg-[#f4f4f4] py-16 px-4 md:px-8 lg:px-20 overflow-hidden">
                 <div className="grid lg:grid-cols-2 gap-10 items-end">
                     {/* Left Side */}
                     <div>
@@ -1244,7 +1263,7 @@ export const LandingPage = () => {
                     </div>
                 </div>
             )}
-            <motion.section className="bg-[#f8f8f8] py-20"
+            <motion.section id="blogs" className="bg-[#f8f8f8] py-20"
                 initial={{
                     opacity: 0,
                     y: 80,
@@ -1409,6 +1428,7 @@ export const LandingPage = () => {
                 </div>
             </motion.section>
             <motion.footer
+                id="contact"
                 className="relative bg-cover bg-center"
                 style={{
                     backgroundImage:
