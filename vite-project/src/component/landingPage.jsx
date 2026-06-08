@@ -46,10 +46,16 @@ export const LandingPage = () => {
 
     const scrollToSection = (menuItem) => {
         const id = sectionIds[menuItem];
-        const el = document.getElementById(id);
-        if (el) {
-            el.scrollIntoView({ behavior: "smooth" });
-        }
+        setTimeout(() => {
+            if (window.__lenis) {
+                window.__lenis.scrollTo(`#${id}`, { offset: 0 });
+            } else {
+                const el = document.getElementById(id);
+                if (el) {
+                    el.scrollIntoView({ behavior: "smooth" });
+                }
+            }
+        }, 100);
     };
 
     const services = [
