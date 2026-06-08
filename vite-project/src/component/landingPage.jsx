@@ -1104,7 +1104,7 @@ export const LandingPage = () => {
                     <div className="w-10 h-2 rounded-full bg-gray-300"></div>
                 </div>
             </section>
-            <>
+       
                 <section
                     className="relative py-28 px-4 md:px-8 lg:px-20 bg-center bg-cover overflow-hidden"
                     style={{
@@ -1210,12 +1210,158 @@ export const LandingPage = () => {
                                 title="Intro Video"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowFullScreen
-                                
+
                             />
                         </div>
                     </div>
                 )}
-            </>
+                <section className="bg-[#f8f8f8] py-20">
+                    <div className="px-4 md:px-8 lg:px-20">
+
+                        {/* Header */}
+                        <div className="flex flex-col items-center md:flex-row md:items-center md:justify-between lg:flex-row lg:items-center lg:justify-between gap-8 mb-12">
+                            <div>
+                                <h2
+                                    className="text-4xl md:text-5xl uppercase text-black"
+                                    style={{ fontFamily: "Oswald, sans-serif" }}
+                                >
+                                    From Our Blog
+                                </h2>
+
+                                <div className="w-10 h-[3px] bg-[#E58A78] mt-3 mb-6"></div>
+
+                                <p className="text-gray-700 max-w-xl text-base md:text-xl">
+                                    there are many variations of passages of lorem ipsum the
+                                    injected humour randomised word.
+                                </p>
+                            </div>
+
+                            <button
+                                className="border border-[#E58A78] w-40 h-12 justify-center cursor-pointer lg:px-8  lg:py-3 rounded-xl  flex items-center gap-3 uppercase"
+                                style={{ fontFamily: "Oswald, sans-serif" }}
+                            >
+                                All Post
+                                <span className="  text-xs lg:text-xl ">→</span>
+                            </button>
+                        </div>
+
+                        {/* Blog Grid */}
+                        <div className="grid lg:grid-cols-[1.1fr_1fr] gap-8">
+
+                            {/* Featured Blog */}
+                            <div className="bg-white rounded-3xl overflow-hidden shadow-lg">
+                                <div className="relative">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1517832606299-7ae9b720a186"
+                                        alt=""
+                                        className="w-full h-[250px] md:h-[250px] object-cover"
+                                    />
+
+                                    <span
+                                        className="absolute top-6 right-6 bg-[#E58A78] text-white px-6 py-2 rounded-md text-sm uppercase"
+                                        style={{ fontFamily: "Oswald, sans-serif" }}
+                                    >
+                                        Haircut
+                                    </span>
+                                </div>
+
+                                <div className="p-8">
+                                    <div
+                                        className="flex gap-6 text-sm text-gray-700 uppercase mb-5"
+                                        style={{ fontFamily: "Oswald, sans-serif" }}
+                                    >
+                                        <span>📅 July 14, 2021</span>
+                                        <span>💬 0 Comments</span>
+                                    </div>
+
+                                    <h3
+                                        className=" lg:text-3xl md:text-4xl leading-tight text-black"
+                                        style={{ fontFamily: "Oswald, sans-serif" }}
+                                    >
+                                        The 90's Are Back And We're Okay With Many More Ready Works It
+                                    </h3>
+                                </div>
+                            </div>
+
+                            {/* Right Blogs */}
+                            <div className="flex flex-col gap-8">
+
+                                {[1, 2, 3].map((item) => (
+                                    <div
+                                        key={item}
+                                        className="bg-white rounded-3xl overflow-hidden shadow-lg flex flex-col sm:flex-row"
+                                    >
+                                        <img
+                                            src="https://images.unsplash.com/photo-1621605815971-fbc98d665033"
+                                            alt=""
+                                            className="w-full sm:w-[180px] h-[220px] sm:h-auto object-cover"
+                                        />
+
+                                        <div className="p-6 flex flex-col justify-center">
+                                            <div
+                                                className="flex gap-5 text-sm text-gray-700 uppercase mb-4"
+                                                style={{ fontFamily: "Oswald, sans-serif" }}
+                                            >
+                                                <span>📅 July 14, 2021</span>
+                                                <span>💬 0 Comments</span>
+                                            </div>
+
+                                            <h3
+                                                className=" lg:text-2xl leading-tight text-black"
+                                                style={{ fontFamily: "Oswald, sans-serif" }}
+                                            >
+                                                Men's Fade Haircut – The Tips And Tricks Every Man Should...
+                                            </h3>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Brand Logos */}
+                        <div className="mt-20 border-t border-gray-200 pt-12">
+                            <div className="grid grid-cols-3 md:grid-cols-6 lg:grid-cols-6 gap-10 items-center justify-items-center">
+                                <img
+                                    src="https://cdn-icons-png.flaticon.com/128/1/1930.png"
+                                    alt="Barber"
+                                    className="h-14 md:h-16 object-contain opacity-60 grayscale hover:opacity-100 transition-all duration-300"
+                                />
+
+                                <img
+                                    src="https://cdn-icons-png.flaticon.com/128/7752/7752579.png"
+                                    alt="Scissors"
+                                    className="h-14 md:h-16 object-contain opacity-60 grayscale hover:opacity-100 transition-all duration-300"
+                                />
+
+                                <img
+                                    src="https://cdn-icons-png.flaticon.com/128/4643/4643405.png"
+                                    alt="Hair Style"
+                                    className="h-14 md:h-16 object-contain opacity-60 grayscale hover:opacity-100 transition-all duration-300"
+                                />
+
+                                <img
+                                    src="https://cdn-icons-png.flaticon.com/128/9090/9090131.png"
+                                    alt="Beard"
+                                    className="h-14 md:h-16 object-contain opacity-60 grayscale hover:opacity-100 transition-all duration-300"
+                                />
+
+                                <img
+                                    src="https://cdn-icons-png.flaticon.com/128/10688/10688722.png"
+                                    alt="Salon"
+                                    className="h-14 md:h-16 object-contain opacity-60 grayscale hover:opacity-100 transition-all duration-300"
+                                />
+
+                                <img
+                                    src="https://cdn-icons-png.flaticon.com/512/4859/4859118.png"
+                                    alt="Barber Shop"
+                                    className="h-14 md:h-16 object-contain opacity-60 grayscale hover:opacity-100 transition-all duration-300"
+                                />
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+         
         </div>
     );
 };
