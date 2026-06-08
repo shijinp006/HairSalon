@@ -1210,7 +1210,7 @@ export const LandingPage = () => {
                                 title="Intro Video"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowFullScreen
-                                a
+                                
                             />
                         </div>
                     </div>
