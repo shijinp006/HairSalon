@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 
 import post1 from "../assets/b1.webp";
-import post2 from "../assets/b1.webp";
+import post2 from "../assets/b2.webp";
 
 
 
